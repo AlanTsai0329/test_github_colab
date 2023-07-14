@@ -67,6 +67,9 @@ def html_downloader(url: str=None):
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--disable-popups")
     chrome_options.add_argument("--disable-translate")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    
 
     driver = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()),
