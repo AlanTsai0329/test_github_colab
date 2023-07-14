@@ -68,8 +68,11 @@ def html_downloader(url: str=None):
     chrome_options.add_argument("--disable-popups")
     chrome_options.add_argument("--disable-translate")
     chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-features=NetworkService")
+    chrome_options.add_argument("--disable-features=VizDisplayCompositor")
     chrome_options.add_argument("--no-sandbox")
-    
+    chrome_options.add_argument("--window-size=1920x1080")
+        
 
     driver = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install()),
